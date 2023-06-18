@@ -42,7 +42,7 @@ const TaskCard = ({ task, id, col }) => {
 					<div className='flex justify-between mt-7'>
 						<div className='flex w-fit'>
 							{task?.usersWorking.map((imageData, idx) => (
-								<div className='-mr-2 w-6 z-20' key={idx}>
+								<div className='-mr-2 w-6' key={idx}>
 									<img src={imageData.path} alt={imageData?.alt || "user"} />
 								</div>
 							))}
