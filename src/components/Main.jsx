@@ -82,7 +82,7 @@ const Main = () => {
           <h1 className="w-40 overflow-hidden text-ellipsis whitespace-nowrap text-4xl font-semibold leading-[55px] sm:w-fit md:text-5xl">
             Mobile App
           </h1>
-          <span className="mt-2.5 flex h-fit items-center gap-x-2 md:gap-x-4 ">
+          <span className="flex h-fit items-center gap-x-2 md:gap-x-4 ">
             <Icon
               name="edit-square"
               size={"25px"}
@@ -94,11 +94,11 @@ const Main = () => {
 
         {/* Multiplayer Side */}
         <div className="flex items-center gap-x-3">
-          <div className="mt-2 flex items-center gap-x-2 md:mt-0">
+          <div className="flex items-center gap-x-2 md:mt-0">
             <Icon
               name="add-square-filled"
               size={"25px"}
-              className="mt-0.5 cursor-pointer"
+              className="cursor-pointer"
             />
             <h4 className="cursor-pointer font-medium text-customPurple">
               Invite
