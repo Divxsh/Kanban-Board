@@ -26,7 +26,7 @@ const TaskCard = ({ task, id, col }) => {
           )}
           {task?.images?.length && (
             <div>
-              <div className="flex gap-x-3">
+              <div className="whitespace-wrap flex gap-x-3 overflow-x-auto">
                 {task.images.map((path, idx) => (
                   <img
                     src={path}

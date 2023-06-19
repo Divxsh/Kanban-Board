@@ -74,11 +74,11 @@ const Main = () => {
   };
 
   return (
-    <div className="flex w-full flex-col px-6 pb-5 pt-5 md:px-12 md:pb-0">
+    <div className="flex w-full flex-col px-6 pb-5 pt-5 md:pb-0 lg:px-12">
       {/*  */}
-      <div className="flex justify-between py-5">
+      <div className="flex justify-between py-0 md:py-5 ">
         {/* Heading Side */}
-        <div className="flex items-center gap-x-5 ">
+        <div className="flex w-full items-center gap-x-5 ">
           <h1 className="text-4xl font-semibold leading-[55px] md:text-5xl">
             Mobile App
           </h1>
@@ -93,18 +93,18 @@ const Main = () => {
         </div>
 
         {/* Multiplayer Side */}
-        <div className="hidden items-center gap-x-3 md:flex">
-          <div className="flex items-center gap-x-2">
+        <div className="flex items-center gap-x-3">
+          <div className="mt-2 flex items-center gap-x-2 md:mt-0">
             <Icon
               name="add-square-filled"
-              size={"15px"}
+              size={"25px"}
               className="mt-0.5 cursor-pointer"
             />
             <h4 className="cursor-pointer font-medium text-customPurple">
               Invite
             </h4>
           </div>
-          <div className="flex w-fit">
+          <div className="hidden w-fit md:flex ">
             <div className="-mr-3 w-9">
               <img src="images/user1.png" alt="user" />
             </div>
