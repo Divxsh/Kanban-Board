@@ -3,7 +3,7 @@ import Icon from "./Icon";
 
 const Navbar = ({ setIsOpen }) => {
   return (
-    <div className='border-["#DBDBDB] sticky top-0 flex h-16 w-full items-center justify-between border-b bg-white px-6 py-22px md:h-88px lg:px-12'>
+    <div className='border-["#DBDBDB] fixed top-0 flex h-16 w-full items-center justify-between border-b bg-white px-6 py-22px md:h-88px lg:px-12'>
       <Icon
         name="hamburger"
         className={"cursor-pointer text-primary lg:hidden"}

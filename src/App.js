@@ -19,11 +19,15 @@ function App() {
   }, []);
 
   return (
-    <div className="flex">
-      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
-      <div className="flex w-full flex-col lg:w-full">
-        <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-        <Main />
+    <div className="flex h-screen min-h-screen md:overflow-y-hidden">
+      <div className="min-w-screen flex w-screen md:overflow-y-hidden">
+        <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+        <div className="flex h-screen flex-1 flex-col">
+          <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+          <div className="flex-1 md:overflow-hidden">
+            <Main />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -74,12 +74,12 @@ const Main = () => {
   };
 
   return (
-    <div className="flex w-full flex-col px-6 pb-5 pt-5 md:pb-0 lg:px-12">
-      {/*  */}
+    <div className="flex h-full flex-col px-6 pb-5 pt-5 md:overflow-hidden md:pb-0 lg:px-12">
+      {/* Heading & Invite */}
       <div className="flex justify-between gap-x-2 py-0 md:gap-x-0 md:py-5 ">
         {/* Heading Side */}
-        <div className="flex w-full items-center gap-x-5 ">
-          <h1 className="w-40 overflow-hidden text-ellipsis whitespace-nowrap text-4xl font-semibold leading-[55px] sm:w-fit md:text-5xl">
+        <div className="flex items-center gap-x-5 ">
+          <h1 className="w-40 overflow-hidden text-ellipsis whitespace-nowrap text-4xl font-semibold sm:w-fit md:text-5xl">
             Mobile App
           </h1>
           <span className="flex h-fit items-center gap-x-2 md:gap-x-4 ">
@@ -124,7 +124,7 @@ const Main = () => {
         </div>
       </div>
 
-      {/*  */}
+      {/* Filter & share */}
       <div className="my-5 flex justify-between gap-x-2">
         <div className="flex gap-x-2 md:gap-x-5 ">
           {/* Filter */}
@@ -141,7 +141,7 @@ const Main = () => {
           </div>
         </div>
 
-        {/* Multiplayer Side */}
+        {/*  Share & other */}
         <div className="flex items-center gap-x-2 md:gap-x-5">
           <div className="flex h-10 cursor-pointer items-center gap-x-2 rounded-md border border-primary px-4 text-primary">
             <Icon name="profile" size="16px" />
@@ -155,15 +155,15 @@ const Main = () => {
         </div>
       </div>
 
-      {/*  */}
-      <div className="grid h-full gap-4 pt-22px sm:grid-cols-1 md:grid-cols-3  ">
+      {/* Task Comtainers */}
+      <div className="grid h-full grid-cols-1 gap-4 pt-2 md:grid-cols-3 md:overflow-hidden md:pt-5 ">
         <DragDropContext
           onDragStart={handleDragStart}
           onDragUpdate={handleDragUpdate}
           onDragEnd={handleDragEnd}
         >
           {/* To Do */}
-          <div className="h-full rounded-2xl bg-customGray">
+          <div className="row-span-1 flex h-[40rem] flex-col rounded-t-2xl bg-customGray md:h-auto md:overflow-hidden">
             <div className="mx-5 mb-2 flex flex-wrap items-center justify-between gap-x-2 border-b-3px border-customPurple pb-22px pt-5 ">
               <div className="flex flex-wrap items-center justify-start gap-x-2">
                 <div className="h-2 w-2 rounded-full bg-customPurple"></div>
@@ -178,10 +178,11 @@ const Main = () => {
                 className={"cursor-pointer"}
               />
             </div>
+
             <Droppable droppableId="todo">
               {(provided) => (
                 <div
-                  className="p-5  sm:overflow-y-auto"
+                  className="flex flex-col overflow-auto scroll-smooth p-5 [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
@@ -209,7 +210,7 @@ const Main = () => {
           </div>
 
           {/* On Progress */}
-          <div className="h-full rounded-2xl bg-customGray">
+          <div className="row-span-1 flex h-[40rem] flex-col rounded-t-2xl bg-customGray md:h-auto md:overflow-hidden">
             <div className="mx-5 mb-2 flex items-center gap-x-2 border-b-3px border-[#FFA500] pb-22px pt-5">
               <div className="h-2 w-2 rounded-full bg-[#FFA500]"></div>
               <h3 className="font-medium">On Progress</h3>
@@ -217,10 +218,11 @@ const Main = () => {
                 {data["progress"]?.length}
               </div>
             </div>
+
             <Droppable droppableId="progress">
               {(provided) => (
                 <div
-                  className="p-5  sm:overflow-y-auto"
+                  className="flex flex-col overflow-auto scroll-smooth p-5 [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
@@ -234,21 +236,21 @@ const Main = () => {
                   ))}
                   {provided.placeholder}
                   <div
-                    className={`absolute mb-4 rounded-2xl border  border-dashed border-[rgba(80,48,229,0.59)] bg-[rgba(81,48,229,0.06)]`}
+                    className={`absolute rounded-2xl border border-dashed  border-[rgba(80,48,229,0.59)] bg-[rgba(81,48,229,0.06)] top-[${placeholderProps.top}] mb-4`}
                     style={{
                       top: placeholderProps.clientY,
                       left: placeholderProps.clientX,
                       height: placeholderProps.clientHeight,
                       width: placeholderProps.clientWidth,
                     }}
-                  ></div>
+                  />
                 </div>
               )}
             </Droppable>
           </div>
 
           {/* Done */}
-          <div className="h-full rounded-2xl bg-customGray ">
+          <div className="row-span-1 flex h-[40rem] flex-col rounded-t-2xl bg-customGray md:h-auto md:overflow-hidden">
             <div className="mx-5 mb-2 flex items-center gap-x-2 border-b-3px border-[#8BC48A] pb-22px pt-5">
               <div className="h-2 w-2 rounded-full bg-[#8BC48A]"></div>
               <h3 className="font-medium">Done</h3>
@@ -256,10 +258,11 @@ const Main = () => {
                 {data["done"]?.length}
               </div>
             </div>
+
             <Droppable droppableId="done">
               {(provided) => (
                 <div
-                  className="p-5 sm:overflow-y-auto "
+                  className="flex flex-col overflow-auto scroll-smooth p-5 [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
@@ -273,7 +276,7 @@ const Main = () => {
                   ))}
                   {provided.placeholder}
                   <div
-                    className={`absolute rounded-2xl border border-dashed  border-[rgba(80,48,229,0.59)] bg-[rgba(81,48,229,0.06)] top-[${placeholderProps.top}] `}
+                    className={`absolute rounded-2xl border border-dashed  border-[rgba(80,48,229,0.59)] bg-[rgba(81,48,229,0.06)] top-[${placeholderProps.top}] mb-4`}
                     style={{
                       top: placeholderProps.clientY,
                       left: placeholderProps.clientX,
