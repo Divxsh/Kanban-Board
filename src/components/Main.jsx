@@ -222,7 +222,7 @@ const Main = () => {
             <Droppable droppableId="progress">
               {(provided) => (
                 <div
-                  className=" m-5 flex flex-col overflow-auto scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+                  className=" m-5 flex flex-col gap-y-5  overflow-auto scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
@@ -262,7 +262,7 @@ const Main = () => {
             <Droppable droppableId="done">
               {(provided) => (
                 <div
-                  className="m-5 flex flex-col overflow-auto scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+                  className="m-5 flex flex-col gap-y-5  overflow-auto scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
