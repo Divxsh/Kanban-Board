@@ -9,24 +9,24 @@ import { useEffect, useState } from "react";
 // }
 
 function App() {
-	const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-	useEffect(() => {
-		document.addEventListener("click", (e) => {
-			e.stopPropagation();
-			setIsOpen(false);
-		});
-	}, []);
+  useEffect(() => {
+    document.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setIsOpen(false);
+    });
+  }, []);
 
-	return (
-		<div className='flex'>
-			<Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
-			<div className='flex flex-col w-full lg:w-[82%]'>
-				<Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
-				<Main />
-			</div>
-		</div>
-	);
+  return (
+    <div className="flex">
+      <Sidebar isOpen={isOpen} setIsOpen={setIsOpen} />
+      <div className="flex w-full flex-col lg:w-full">
+        <Navbar isOpen={isOpen} setIsOpen={setIsOpen} />
+        <Main />
+      </div>
+    </div>
+  );
 }
 
 export default App;
