@@ -9,7 +9,7 @@ const TaskCard = ({ task, id, col }) => {
     <Draggable index={id} draggableId={dragId}>
       {(provided) => (
         <div
-          className="mb-5 cursor-pointer rounded-2xl bg-white p-5"
+          className=" cursor-pointer rounded-2xl bg-white p-5"
           ref={provided.innerRef}
           {...provided.draggableProps}
           {...provided.dragHandleProps}

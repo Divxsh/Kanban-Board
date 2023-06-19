@@ -163,7 +163,7 @@ const Main = () => {
           onDragEnd={handleDragEnd}
         >
           {/* To Do */}
-          <div className="row-span-1 flex h-[40rem] flex-col rounded-t-2xl bg-customGray md:h-auto md:overflow-hidden">
+          <div className="row-span-1 flex h-[40rem] flex-col rounded-2xl bg-customGray md:h-auto md:overflow-hidden md:rounded-b-none">
             <div className="mx-5 mb-2 flex flex-wrap items-center justify-between gap-x-2 border-b-3px border-customPurple pb-22px pt-5 ">
               <div className="flex flex-wrap items-center justify-start gap-x-2">
                 <div className="h-2 w-2 rounded-full bg-customPurple"></div>
@@ -182,7 +182,7 @@ const Main = () => {
             <Droppable droppableId="todo">
               {(provided) => (
                 <div
-                  className="flex flex-col overflow-auto scroll-smooth p-5 [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+                  className="m-5 flex flex-col gap-y-5 overflow-auto scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
@@ -196,7 +196,7 @@ const Main = () => {
                   ))}
                   {provided.placeholder}
                   <div
-                    className={`absolute rounded-2xl border border-dashed  border-[rgba(80,48,229,0.59)] bg-[rgba(81,48,229,0.06)] top-[${placeholderProps.top}] mb-4`}
+                    className={`absolute rounded-2xl border border-dashed border-[rgba(80,48,229,0.59)] bg-[rgba(81,48,229,0.06)] top-[${placeholderProps.top}] mb-4 `}
                     style={{
                       top: placeholderProps.clientY,
                       left: placeholderProps.clientX,
@@ -210,7 +210,7 @@ const Main = () => {
           </div>
 
           {/* On Progress */}
-          <div className="row-span-1 flex h-[40rem] flex-col rounded-t-2xl bg-customGray md:h-auto md:overflow-hidden">
+          <div className="row-span-1 flex h-[40rem] flex-col rounded-2xl bg-customGray md:h-auto md:overflow-hidden md:rounded-b-none">
             <div className="mx-5 mb-2 flex items-center gap-x-2 border-b-3px border-[#FFA500] pb-22px pt-5">
               <div className="h-2 w-2 rounded-full bg-[#FFA500]"></div>
               <h3 className="font-medium">On Progress</h3>
@@ -222,7 +222,7 @@ const Main = () => {
             <Droppable droppableId="progress">
               {(provided) => (
                 <div
-                  className="flex flex-col overflow-auto scroll-smooth p-5 [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+                  className=" m-5 flex flex-col overflow-auto scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
@@ -250,7 +250,7 @@ const Main = () => {
           </div>
 
           {/* Done */}
-          <div className="row-span-1 flex h-[40rem] flex-col rounded-t-2xl bg-customGray md:h-auto md:overflow-hidden">
+          <div className="row-span-1 flex h-[40rem] flex-col rounded-2xl bg-customGray md:h-auto md:overflow-hidden md:rounded-b-none">
             <div className="mx-5 mb-2 flex items-center gap-x-2 border-b-3px border-[#8BC48A] pb-22px pt-5">
               <div className="h-2 w-2 rounded-full bg-[#8BC48A]"></div>
               <h3 className="font-medium">Done</h3>
@@ -262,7 +262,7 @@ const Main = () => {
             <Droppable droppableId="done">
               {(provided) => (
                 <div
-                  className="flex flex-col overflow-auto scroll-smooth p-5 [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
+                  className="m-5 flex flex-col overflow-auto scroll-smooth [-ms-overflow-style:'none'] [scrollbar-width:'none'] [&::-webkit-scrollbar]:hidden"
                   ref={provided.innerRef}
                   {...provided.droppableProps}
                 >
