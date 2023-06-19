@@ -95,8 +95,14 @@ const Main = () => {
 				{/* Multiplayer Side */}
 				<div className='md:flex items-center gap-x-3 hidden'>
 					<div className='flex items-center gap-x-2'>
-						<Icon name='add-square-filled' size={"15px"} className='mt-0.5' />
-						<h4 className='text-customPurple font-medium'>Invite</h4>
+						<Icon
+							name='add-square-filled'
+							size={"15px"}
+							className='mt-0.5 cursor-pointer'
+						/>
+						<h4 className='text-customPurple font-medium cursor-pointer'>
+							Invite
+						</h4>
 					</div>
 					<div className='flex w-fit'>
 						<div className='-mr-3 w-9'>
@@ -111,7 +117,7 @@ const Main = () => {
 						<div className='-mr-3 w-9'>
 							<img src='images/user4.png' alt='user' />
 						</div>
-						<div className='bg-[#F4D7DA] text-[#D25B68] rounded-full border border-white w-9 flex justify-center items-center font-medium'>
+						<div className='bg-[#F4D7DA] text-[#D25B68] rounded-full border border-white w-9 flex justify-center items-center font-medium cursor-pointer'>
 							+2
 						</div>
 					</div>
@@ -122,13 +128,13 @@ const Main = () => {
 			<div className='flex justify-between my-5 gap-x-2'>
 				<div className='flex md:gap-x-5 gap-x-2 '>
 					{/* Filter */}
-					<div className='flex items-center h-10 px-3.5 gap-x-2  text-primary border border-primary rounded-md'>
+					<div className='flex items-center h-10 px-3.5 gap-x-2 text-primary border border-primary rounded-md cursor-pointer'>
 						<Icon name='filter' size={"16px"} />
 						<span className='hidden md:block md:font-medium'>Filter</span>
 						<Icon name='arrow-down' size={"16px"} className={"ml-1"} />
 					</div>
 					{/* Calender */}
-					<div className='flex items-center h-10 px-3 gap-x-2 text-primary border border-primary rounded-md'>
+					<div className='flex items-center h-10 px-3 gap-x-2 text-primary border border-primary rounded-md cursor-pointer'>
 						<Icon name='calendar' size={"16px"} />
 						<span className='hidden md:block md:font-medium'>Today</span>
 						<Icon name='arrow-down' size={"16px"} className={"ml-1"} />
@@ -137,15 +143,15 @@ const Main = () => {
 
 				{/* Multiplayer Side */}
 				<div className='flex md:gap-x-5 gap-x-2 items-center'>
-					<div className='flex items-center px-4 h-10 gap-x-2 text-primary border border-primary rounded-md'>
+					<div className='flex items-center px-4 h-10 gap-x-2 text-primary border border-primary rounded-md cursor-pointer'>
 						<Icon name='profile' size='16px' />
 						<span className='hidden md:block md:font-medium'>Share</span>
 					</div>
 					<div className='h-3/4 border-l border-primary'></div>
-					<div className='flex justify-center items-center w-10 h-10 rounded-md bg-customPurple'>
+					<div className='flex justify-center items-center w-10 h-10 rounded-md bg-customPurple cursor-pointer'>
 						<Icon name='pause' size='20px' />
 					</div>
-					<Icon name='menu' size='21px' />
+					<Icon name='menu' size='21px' className={"cursor-pointer"} />
 				</div>
 			</div>
 
@@ -158,12 +164,19 @@ const Main = () => {
 				>
 					{/* To Do */}
 					<div className='h-full bg-customGray rounded-2xl'>
-						<div className='flex  flex-wrap items-center justify-start   gap-x-2 pt-5 pb-22px mx-5 border-b-3px border-customPurple mb-2 '>
-							<div className='w-2 h-2 bg-violet-500 rounded-full'></div>
-							<h3 className='font-medium'>To Do</h3>
-							<div className='w-5 h-5 flex items-center justify-center rounded-full text-xs font-medium text-[#625F6D] bg-[#E0E0E0] ml-1'>
-								{data["todo"]?.length}
+						<div className='flex flex-wrap items-center justify-between gap-x-2 pt-5 pb-22px mx-5 border-b-3px border-customPurple mb-2 '>
+							<div className='flex flex-wrap items-center justify-start gap-x-2'>
+								<div className='w-2 h-2 bg-violet-500 rounded-full'></div>
+								<h3 className='font-medium'>To Do</h3>
+								<div className='w-5 h-5 flex items-center justify-center rounded-full text-xs font-medium text-[#625F6D] bg-[#E0E0E0] ml-1'>
+									{data["todo"]?.length}
+								</div>
 							</div>
+							<Icon
+								name={"add-square-filled"}
+								size={"20px"}
+								className={"cursor-pointer"}
+							/>
 						</div>
 						<Droppable droppableId='todo'>
 							{(provided) => (

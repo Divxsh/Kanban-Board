@@ -1,10 +1,18 @@
 import React from "react";
 import Icon from "./Icon";
 
-const Navbar = () => {
+const Navbar = ({ setIsOpen }) => {
 	return (
-		<div className='sticky top-0 bg-white flex justify-between items-center w-full h-88px md:px-12 px-6 py-22px border-b border-["#DBDBDB]'>
-			<div className='hidden md:block md:relative w-4/12'>
+		<div className='sticky top-0 bg-white flex justify-between items-center w-full h-16 md:h-88px md:px-12 px-6 py-22px border-b border-["#DBDBDB]'>
+			<Icon
+				name='hamburger'
+				className={"text-primary md:hidden cursor-pointer"}
+				onClick={(e) => {
+					e.stopPropagation();
+					setIsOpen(true);
+				}}
+			/>
+			<div className='md:block hidden relative w-4/12 '>
 				<input
 					type='text'
 					className='h-11 pl-14 bg-customWhite rounded-md w-full bg-customGray focus:outline-none'
@@ -15,10 +23,11 @@ const Navbar = () => {
 					className={"absolute top-1/2 left-4 -translate-y-1/2"}
 				/>
 			</div>
-			<div className='flex md:justify-evenly md:w-auto justify-between w-full md:gap-x-12 gap-x-6'>
-				<div className='flex justify-between items-center gap-x-7'>
-					<Icon name='calendar-2' />
-					<Icon name='message-question' />
+			<div className='flex md:justify-evenly md:w-auto md:gap-x-12 gap-x-3 '>
+				<div className='flex justify-between items-center gap-x-3'>
+					<Icon name='search' className={"md:hidden block"} />
+					<Icon name='calendar-2' className={"md:block"} />
+					<Icon name='message-question' className={"md:block"} />
 					<Icon
 						name='notification'
 						className={
@@ -28,9 +37,9 @@ const Navbar = () => {
 				</div>
 
 				<div className='flex items-center gap-x-5'>
-					<div className='flex flex-col items-end mb-0.5 '>
+					<div className='hidden mb-0.5 md:flex md:flex-col md:items-end'>
 						<span className='text-black text-right'>Anima Agrawal</span>
-						<span className='text-[#787486]'>U.P, India</span>
+						<span className='text-primary text-right'>U.P, India</span>
 					</div>
 					<div className='flex items-center gap-x-2'>
 						<div className='w-38px h-38px rounded-full overflow-hidden'>
@@ -40,7 +49,7 @@ const Navbar = () => {
 								className='w-full'
 							/>
 						</div>
-						<Icon name='arrow-down' size={"sm"} />
+						<Icon name='arrow-down' size={"sm"} className={"md:block hidden"} />
 					</div>
 				</div>
 			</div>

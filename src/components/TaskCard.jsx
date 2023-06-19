@@ -16,7 +16,7 @@ const TaskCard = ({ task, id, col }) => {
 				>
 					<div className='flex justify-between items-center mb-1'>
 						<Pill status={task.priority || task.status} />
-						<div className='-mt-2 font-extrabold'>...</div>
+						<div className='-mt-2 font-extrabold cursor-pointer'>...</div>
 					</div>
 					<h2 className='text-lg font-semibold text-customBlack'>
 						{task.title}
@@ -48,16 +48,17 @@ const TaskCard = ({ task, id, col }) => {
 							))}
 						</div>
 						<div className='flex gap-x-4 text-primary'>
-							<div className='flex items-center'>
+							<div className='flex items-center cursor-pointer'>
 								<Icon name={"message"} size={"16px"} />
 								<div className='ml-1.5 text-xs font-bold'>
-									12 <span className='xl:inline-block md:hidden'>comments</span>
+									12{" "}
+									<span className='xl:inline-block md:hidden '>comments</span>
 								</div>
 							</div>
-							<div className='flex items-center'>
+							<div className='flex items-center cursor-pointer'>
 								<Icon name={"folder"} size={"16px"} />
 								<div className='ml-1.5 text-xs font-bold'>
-									15 <span className='xl:inline-block md:hidden'>files</span>
+									15 <span className='xl:inline-block md:hidden '>files</span>
 								</div>
 							</div>
 						</div>
