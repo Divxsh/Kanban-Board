@@ -9,20 +9,20 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 	};
 	return (
 		<aside
-			className={` w-2/3 absolute top-0 left-0 z-20 border-["#DBDBDB] lg:static bg-white ${
+			className={`w-[250px] absolute top-0 left-0 z-20 border-["#DBDBDB] lg:static bg-white ${
 				isOpen ? "translate-x-0" : "-translate-x-full"
-			} transition-transform md:translate-x-0 lg:flex lg:w-[18%] lg:min-w-[230px] lg:flex-shrink-0 border-r`}
+			} transition-transform lg:translate-x-0 lg:flex lg:w-[18%] lg:min-w-[230px] lg:flex-shrink-0 border-r`}
 		>
 			<div className="sticky top-0 h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']  ">
 				{/* Sidebar Menus */}
-				<div className='sticky top-0 flex justify-between items-center px-6 py-7 md:h-88px h-16 border-b border-["#DBDBDB] bg-white'>
+				<div className='sticky top-0 flex justify-between items-center px-6 py-7 md:h-88px h-16 border-b border-["#DBDBDB] bg-white '>
 					<div className='flex items-center'>
 						<Icon name='colorfilter' className={"mr-2"} />
 						Project M.
 					</div>
 					<Icon
 						name={"double-arrow-left"}
-						className={"md:block hidden cursor-pointer"}
+						className={"lg:block hidden cursor-pointer"}
 					/>
 					{isOpen && (
 						<Icon name={"double-arrow-left"} onClick={onClickHandler} />

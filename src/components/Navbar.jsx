@@ -6,7 +6,7 @@ const Navbar = ({ setIsOpen }) => {
 		<div className='sticky top-0 bg-white flex justify-between items-center w-full h-16 md:h-88px md:px-12 px-6 py-22px border-b border-["#DBDBDB]'>
 			<Icon
 				name='hamburger'
-				className={"text-primary md:hidden cursor-pointer"}
+				className={"text-primary lg:hidden cursor-pointer"}
 				onClick={(e) => {
 					e.stopPropagation();
 					setIsOpen(true);
