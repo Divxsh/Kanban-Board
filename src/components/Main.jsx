@@ -76,13 +76,13 @@ const Main = () => {
   return (
     <div className="flex w-full flex-col px-6 pb-5 pt-5 md:pb-0 lg:px-12">
       {/*  */}
-      <div className="flex justify-between py-0 md:py-5 ">
+      <div className="flex justify-between gap-x-2 py-0 md:gap-x-0 md:py-5 ">
         {/* Heading Side */}
         <div className="flex w-full items-center gap-x-5 ">
-          <h1 className="text-4xl font-semibold leading-[55px] md:text-5xl">
+          <h1 className="w-40 overflow-hidden text-ellipsis whitespace-nowrap text-4xl font-semibold leading-[55px] sm:w-fit md:text-5xl">
             Mobile App
           </h1>
-          <span className="mt-2 flex h-fit items-center gap-x-4 ">
+          <span className="mt-2.5 flex h-fit items-center gap-x-2 md:gap-x-4 ">
             <Icon
               name="edit-square"
               size={"25px"}
