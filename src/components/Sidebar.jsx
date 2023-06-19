@@ -9,9 +9,9 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 	};
 	return (
 		<aside
-			className={`lg:flex lg:w-[18%] lg:min-w-[230px] flex-shrink-0 lg:border-r border-["#DBDBDB] w-2/3 absolute top-0 left-0 z-20 lg:static bg-white ${
+			className={` w-2/3 absolute top-0 left-0 z-20 border-["#DBDBDB] lg:static bg-white h-full ${
 				isOpen ? "translate-x-0" : "-translate-x-full"
-			} transition-transform md:translate-x-0`}
+			} transition-transform md:translate-x-0 lg:flex lg:w-[18%] lg:min-w-[230px] lg:flex-shrink-0 border-r`}
 		>
 			<div className="sticky top-0 h-screen overflow-y-scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:'none']  ">
 				{/* Sidebar Menus */}
