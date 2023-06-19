@@ -74,7 +74,7 @@ const Main = () => {
   };
 
   return (
-    <div className="flex h-full flex-col px-6 pb-5 pt-5 md:overflow-hidden md:pb-0 lg:px-12">
+    <div className="mt-16 flex h-full flex-col px-6 pb-5 pt-5 md:mt-0 md:overflow-hidden md:pb-0 lg:px-12">
       {/* Heading & Invite */}
       <div className="flex justify-between gap-x-2 py-0 md:gap-x-0 md:py-5 ">
         {/* Heading Side */}
